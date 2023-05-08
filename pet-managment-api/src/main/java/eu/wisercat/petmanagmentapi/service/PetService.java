@@ -3,7 +3,6 @@ package eu.wisercat.petmanagmentapi.service;
 import eu.wisercat.petmanagmentapi.dao.PetRepository;
 import eu.wisercat.petmanagmentapi.exception.PetNotFoundException;
 import eu.wisercat.petmanagmentapi.model.Pet;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +14,9 @@ public class PetService {
 
     private final PetRepository petRepository;
 
-    public Pet findById(long id) throws EntityNotFoundException {
+    public Pet findById(long id) throws PetNotFoundException {
         return petRepository.findById(id)
-                .orElseThrow((() -> new EntityNotFoundException(String.format("Pet not found with id=%s", id))));
+                .orElseThrow((() -> new PetNotFoundException(String.format("Pet not found with id=%s", id))));
     }
 
     public Pet findByIdentificationCode(String identificationCode) throws PetNotFoundException {
