@@ -1,0 +1,70 @@
+<div class="py-5 text-center">
+  <h2>Edit your pet's info</h2>
+</div>
+
+<div class="row">
+  <div class="col-md-12 order-md-1">
+    <form #petsForm="ngForm" class="needs-validation" novalidate (ngSubmit)="onSubmit(petsForm.value)">
+
+      <div class="mb-3">
+        <label for="name">Name</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="name" name="name" placeholder="Name" required [(ngModel)]="name">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="identificationCode">Code</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="identificationCode" name="identificationCode" placeholder="Code" required [(ngModel)]="identificationCode" [disabled]="true">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="type">Type</label>
+        <select class="custom-select d-block w-100" id="type" name="type" required [(ngModel)]="type">
+          <option value="">Choose...</option>
+          <option>Cat</option>
+          <option>Dog</option>
+          <option>Horse</option>
+          <option>Rabbit</option>
+          <option>Parrot</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="furColor">Fur color</label>
+        <select class="custom-select d-block w-100" id="furColor" name="furColor" required [(ngModel)]="furColor">
+          <option value="">Choose...</option>
+          <option>Black</option>
+          <option>White</option>
+          <option>Brown</option>
+          <option>Yellow</option>
+          <option>Blue</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="country">Country of origin</label>
+        <select class="custom-select d-block w-100" id="country" name="country" required [(ngModel)]="country">
+          <option value="">Choose...</option>
+          <option>Estonia</option>
+          <option>Latvia</option>
+          <option>Lithuania</option>
+          <option>Finland</option>
+          <option>Sweden</option>
+          <option>Norway</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary btn-lg btn-block"
+              type="submit"
+              [disabled]="!petsForm.valid">
+        Edit Pet
+      </button>
+      <app-button buttonText="Cancel"></app-button>
+    </form>
+  </div>
+</div>
+
+
