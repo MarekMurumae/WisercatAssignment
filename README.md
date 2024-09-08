@@ -1,5 +1,7 @@
 # WisercatAssignment
-Back end:
+## Back end:
+Currently not live
+
 Start the application with the following command: ./gradlew bootRun
 
 Some details about back end:
@@ -10,7 +12,9 @@ Some details about back end:
 - Liquibase as a data migration tool
 - At startup inserts 3 pets
 
-Front end:
+## Front end:
+Currently live at: https://wisercat-assignment.vercel.app/
+
 Start the application with the following command: npm start
 
 Some details about front end
